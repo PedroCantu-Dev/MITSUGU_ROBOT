@@ -151,32 +151,7 @@ String estado="";
                 digitalWrite(izqB, r_low[1]); 
                 digitalWrite(derA, r_low[2]); 
                 digitalWrite(derB, r_low[3]); 
-                }
-        /*switch(controlModeLatch){
-          case "cm_xtra":
-            Serial.println("rigth circle");
-            digitalWrite(izqA, r_circle[0]); 
-            digitalWrite(izqB, r_circle[1]); 
-            digitalWrite(derA, r_circle[2]); 
-            digitalWrite(derB, r_circle[3]); 
-          
-            break;
-          case "cm_reversed":
-            Serial.println("rigth rev");
-            digitalWrite(izqA, r_rev[0]); 
-            digitalWrite(izqB, r_rev[1]); 
-            digitalWrite(derA, r_rev[2]); 
-            digitalWrite(derB, r_rev[3]); 
-            break;
-          default:
-            Serial.println("rigth normal");
-            digitalWrite(izqA, r_low[0]); 
-            digitalWrite(izqB, r_low[1]); 
-            digitalWrite(derA, r_low[2]); 
-            digitalWrite(derB, r_low[3]); 
-            break;
-          }*/
-          
+                }          
        }
         if(strcmp(estadoLatch.c_str() , RIGTH_REVERSE.c_str())==0)
       { // Rigth
@@ -217,30 +192,6 @@ String estado="";
                     digitalWrite(derA, l_low[2]); 
                     digitalWrite(derB, l_low[3]); 
                 }
-        /*  case :
-            Serial.println("left circle");
-            digitalWrite(izqA, l_circle[0]); 
-            digitalWrite(izqB, l_circle[1]); 
-            digitalWrite(derA, l_circle[2]); 
-            digitalWrite(derB, l_circle[3]); 
-          
-            break;
-          case "cm_reversed":
-            Serial.println("left rev");
-            digitalWrite(izqA, l_rev[0]); 
-            digitalWrite(izqB, l_rev[1]); 
-            digitalWrite(derA, l_rev[2]); 
-            digitalWrite(derB, l_rev[3]); 
-            break;
-          default:
-            Serial.println("left normal");
-            digitalWrite(izqA, l_low[0]); 
-            digitalWrite(izqB, l_low[1]); 
-            digitalWrite(derA, l_low[2]); 
-            digitalWrite(derB, l_low[3]); 
-            break;
-          } 
-          */
        }
        if(strcmp(estadoLatch.c_str() , LEFT_REVERSE.c_str())==0)
       { // Left reverse
