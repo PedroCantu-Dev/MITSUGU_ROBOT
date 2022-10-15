@@ -3,56 +3,55 @@
 SoftwareSerial miBT(12,13);
 
 //definiendo los sensores
-
-int izqA = 5; 
-int izqR = 6; 
+//veamos
+int izqA = 4; 
+int izqR = 2;  
 int derA = 7; 
-int derR = 8; 
+int derR = 5; 
 
 int vel = 255; // Velocidad de los motores (0-255)
 String estadoLatch = "neutral"; // inicia detenido
 
-//neutral 0000
+
+// NEUTRAL Y PARO TOTAL
 String NEUTRAL = "neutral"; //0000
 int neutral[4] = {0,0,0,0};
-//total stop 1111
 String STOP = "stop";//1111
 int stoped[4] = {1,1,1,1};
 
+//AVANCE Y RETROCESO
 String FORWARD = "forward";
 int forward[4] = {1,0,1,0};
 String REVERSE = "reverse";
 int reverse[4] = {0,1,0,1};
 
-//turn rigth, next wheel neutal
+//MODOS NORAMALES DE VUELTA
 String RIGTH_LOW = "r_low";
 int r_low[4] = {1,0,0,0};
-//turn rigth, next wheel stoked 
-String RIGTH_LOW_2 = "r_low_2";
-int r_low_2[4] = {1,0,1,1};
-//turn rigth  in reverse, next wheel neutral
-String RIGTH_REVERSE = "r_rev";
-int r_rev[4] = {0,0,0,1};
-//turn rigth in reverse, next wheel stocked
-String RIGTH_REVERSE_2  = "r_rev_2";
-int r_rev_2[4] = {1,1,0,1};
-//circle rigth
+String LEFT_LOW = "l_low";
+int l_low[4] =  {0,0,1,0}; 
+
+//MODOS DE VUELTA CON LLANTA OPUESTA DETENIDA
+String RIGTH_LOW_STUCK = "r_low_stuck";
+int r_low_stuck[4] = {1,0,1,1};
+String LEFT_LOW_STUCK = "l_low_stuck";
+int l_low_stuck[4] = {1,1,1,0};
+
+//VUELTA DE PRECISION con circulo
 String RIGTH_CIRCLE;
 int r_circle[4] = {1,0,0,1};
-
-
-String LEFT_LOW = "l_low";
-int l_low[4] = {0,0,1,0};
-String LEFT_LOW_2 = "l_low_2";
-int l_low_2[4] = {1,1,1,0};
-
-String LEFT_REVERSE = "l_rev";
-int l_rev[4] = {0,1,0,0};
-String LEFT_REVERSE_2 =  "l_rev_2";
-int l_rev_2[4] = {0,1,1,1};
-
 String LEFT_CIRCLE;
 int l_circle[4] = {0,1,1,0};
+
+//VUELTAS EN REVERSA
+String RIGTH_REVERSE = "r_rev";
+int r_rev[4] = {0,0,0,1};
+String RIGTH_REVERSE_STUCK  = "r_rev_stuck";
+int r_rev_stuck[4] = {1,1,0,1};
+String LEFT_REVERSE = "l_rev";
+int l_rev[4] = {0,1,0,0};
+String LEFT_REVERSE_STUCK =  "l_rev_stuck";
+int l_rev_stuck[4] = {0,1,1,1};
 
 String controlModeLatch = "cm_normal"; //can be normal, xtra and reversed
 
