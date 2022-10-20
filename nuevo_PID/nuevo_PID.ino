@@ -5,17 +5,18 @@
 #include <Dabble.h>
 
 //Right motor
-int enable_R_Motor=9; 
+int enable_R_Motor=6; 
 
 //Left motor
-int enable_L_Motor=10;
+int enable_L_Motor=3;
 
 //pines de motores
 //motor pins
-int izqA = 6; 
-int izqR = 5;  
-int derA = 8; 
-int derR = 7; 
+int izqA = 4; 
+int izqR = 2;  
+int derA = 7; 
+int derR = 5; 
+
 
 String lastPressed = "NEUTRAL";
 
@@ -68,10 +69,6 @@ void setup()
   pinMode(izqA, OUTPUT);
   pinMode(izqR, OUTPUT);
 
-  pinMode(enable_R_Motor, OUTPUT);
-  pinMode(enable_L_Motor, OUTPUT);
-
-
   //front sensor  
   pinMode(frontSensor, INPUT);
 
@@ -80,11 +77,8 @@ void setup()
 
   //iniciando el motor sin movimiento
   rotateMotor(neutral);   
-  Dabble.begin(38400, 3, 4);
+  Dabble.begin(38400, 9, 10);
   //Serial.begin(9600);
-
-   digitalWrite(enable_L_Motor,  HIGH); 
-   digitalWrite(enable_R_Motor,  HIGH);
 }
 
 void loop()
