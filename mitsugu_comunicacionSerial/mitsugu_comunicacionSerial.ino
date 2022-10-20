@@ -27,10 +27,12 @@ void loop() {
       estado += '\0';
           
          if(estado == ""){
+          Serial.println("nada");
             } 
          else {
-
-           if(estado.indexOf("l") >0){
+          Serial.println("estado : " + estado);
+           if(estado.indexOf("l") >-1){
+            Serial.println("estado L : " +String( estado.indexOf("l")));
               int izqIndex = estado.indexOf("l")+1;
               izqVel = String(estado.substring(izqIndex) ).toInt();
            }
